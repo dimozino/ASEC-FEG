@@ -190,7 +190,7 @@ If this number is changed, review all dependent settings, including frame extrac
 
 ### QM/MM optimization
 
-The supplied OpenMolcas template uses `&SCF` with B3LYP and the 6-31G* basis set.
+The supplied OpenMolcas templates use `&SCF` with B3LYP or `&RASSCF`and the 6-31G* basis set.
 
 The ASEC-FEG protocol is not restricted to this electronic-structure method. Adapting the calculation requires checking compatibility with the embedding, gradient, geometry-optimization, and charge-refitting stages.
 
