@@ -139,20 +139,6 @@ Changing `ksolv.f` without rebuilding the affected components does not update th
 | `final_protein.key` | Additional Tinker key-file template |
 | `melacu63.prm` | Tinker force-field parameter file |
 
-Some distributed files may have an additional `.txt` suffix. Restore the filenames expected by the scripts before use, for example:
-
-```text
-ASEC.f.txt                  → ASEC.f
-MD_ASEC.f.txt               → MD_ASEC.f
-New_parameters.f.txt        → New_parameters.f
-Templates_gro_tk.f.txt      → Templates_gro_tk.f
-cavity_from_size.tcl.txt    → cavity_from_size.tcl
-protein_dft.input.txt       → protein_dft.input
-protein_dft.key.txt         → protein_dft.key
-final_protein.key.txt       → final_protein.key
-melacu63.prm.txt            → melacu63.prm
-```
-
 ## Molecular input preparation
 
 The workflow starts from a **prepared molecular model**, not an arbitrary PDB file.
