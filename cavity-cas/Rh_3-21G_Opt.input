@@ -1,0 +1,58 @@
+* template for CASSCF optimization
+
+> EXPORT MOLCAS_MOLDEN=ON
+
+> COPY $InpDir/$Project.xyz $WorkDir
+> COPY $InpDir/$Project.key $WorkDir
+> COPY $InpDir/melacu63.prm $WorkDir
+> COPY $InpDir/$Project.Espf.Data $WorkDir
+
+> COPY $InpDir/$Project.JobIph $WorkDir/$Project.JobOld
+
+> EXPORT CONT=1
+
+&Gateway
+ Tinker
+ Group = NoSym
+ Basis = 3-21G
+
+>   Set   maxiter   100
+>   Do   while
+ 
+   &SEWARD
+   &ESPF
+    External = Tinker
+    lamorok
+   &RASSCF
+    spin=1
+    nActEl=12 0 0 
+    Inactive=76   
+    Ras2=12
+    JobIph 
+    cirestart
+ 
+> COPY $WorkDir/$Project.JobIph $InpDir/$Project.JobIph_new
+> COPY $Project.JobIph $Project.JobOld
+
+   &ALASKA
+   &SLAPAF
+    cartesian
+    rHidden = 4.0
+
+> COPY $WorkDir/$Project.xyz $InpDir/$Project.Final.xyz
+> COPY $WorkDir/$Project.Espf.Data $InpDir
+
+> EXPORT EST=00$CONT
+> If ( -FILE $Project.$EST )
+> COPY $WorkDir/$Project.$EST $InpDir
+> EndIf
+
+> EXPORT EST=0$CONT
+> If ( -FILE $Project.$EST )
+> COPY $WorkDir/$Project.$EST $InpDir
+> EndIf
+
+> EVAL CONT=$CONT+1
+
+>   EndDo
+

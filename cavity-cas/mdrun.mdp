@@ -1,0 +1,39 @@
+
+constraints             = none 
+integrator              = md         
+tinit                   = 0          
+dt                      = 0.001      
+nsteps                  = 8000000   
+comm-mode               = Linear 
+
+nstxout                 = 0 
+nstvout                 = 0     
+nstfout                 = 0     
+nstlog                  = 1000
+nstenergy               = 1000      
+nstxtcout               = 1000      
+
+cutoff-scheme           = Verlet
+ns_type                 = grid
+nstlist                 = 10       
+rcoulomb                = 1.2
+rvdw                    = 1.2
+
+coulombtype             = PME  
+pme_order               = 4    
+fourierspacing          = 0.16
+
+tcoupl = V-rescale 
+tc_grps = System
+tau_t = 0.1
+ref_t = 298
+
+
+pcoupl                  = no 
+gen_seed                = 12345 
+pbc                     = xyz
+DispCorr                = EnerPres
+
+freezegrps = GroupDyna
+freezedim = Y Y Y
+
