@@ -1,0 +1,45 @@
+! 6-31G* SV/C Direct Conv Grid4 
+! KDIIS
+%pointcharges "./field.pc"
+%MaxCore 64000
+%pal
+nprocs=4
+end
+
+%scf maxiter=999
+     maxintmem=2500
+     maxdisk=12000
+     end
+     
+%casscf nel 6 norb 6 mult 1 nroots 3 
+        maxiter 999
+        ci NGuessMat 512 end
+        trafostep RI
+        gtol 1e-5 
+end
+
+%mrci ewin         -4,1000
+      citype        SORCI
+      nguessmat     512 
+      DavidsonOpt   Davidson1
+      UseIVOs       false
+      tsel          1e-6
+      tpre          1e-4
+      tnat          1e-6
+      tstore        1e-8
+      solver        diis
+      cimode        direct2
+      intmode       ritrafo
+      mrpt_shift    0.4
+      etol          1e-5
+      rtol          1e-5
+      MaxMemInt     2000
+      MaxMemVec     100
+      FourIndexInts true
+      newblock 1 *
+         nroots 3 
+         refs cas(6,6) end
+         end
+      end 
+     
+* xyz 1 1

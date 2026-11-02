@@ -1,0 +1,8 @@
+! B3LYP 6-31g*
+%pointcharges "./field.pc"
+%MaxCore 64000
+%pal
+nprocs=4
+end
+
+* xyz 1 1
