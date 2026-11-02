@@ -240,7 +240,7 @@ Run calculations in a dedicated working directory.
 After configuration and input preparation:
 
 ```bash
-bash asec_cavity.sh
+sbatch asec_cavity.sh
 ```
 
 The supplied driver runs `Step_0` followed by steps 1–5.
