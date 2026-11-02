@@ -4,6 +4,8 @@ A script-based implementation of the **average solvent electrostatic configurati
 
 The workflow combines molecular dynamics sampling, an ensemble-averaged representation of the environment, QM/MM geometry optimization, and RESP atomic-charge updates. It connects **GROMACS**, **OpenMolcas/Tinker**, **ORCA**, and **Multiwfn** through Bash, Python, Fortran, and Tcl utilities.
 
+> **Scope:** This repository implements ASEC-FEG QM/MM geometry optimization. It does not implement calculations of free-energy differences or reaction barriers.
+>
 > **Before running:** Modify and rebuild Tinker as described below. The scripts also require system-specific molecular inputs, selections, paths, and calculation settings.
 
 ## Method overview
