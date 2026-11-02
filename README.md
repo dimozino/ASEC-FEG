@@ -4,8 +4,6 @@ A script-based implementation of the **average solvent electrostatic configurati
 
 The workflow combines molecular dynamics sampling, an ensemble-averaged representation of the environment, QM/MM geometry optimization, and RESP atomic-charge updates. It connects **GROMACS**, **OpenMolcas/Tinker**, **ORCA**, and **Multiwfn** through Bash, Python, Fortran, and Tcl utilities.
 
-> **Scope:** This repository implements ASEC-FEG QM/MM geometry optimization. It does not implement calculations of free-energy differences or reaction barriers.
->
 > **Before running:** Modify and rebuild Tinker as described below. The scripts also require system-specific molecular inputs, selections, paths, and calculation settings.
 
 ## Method overview
@@ -26,13 +24,13 @@ The supplied implementation uses **100 sampled configurations**. This is a confi
 
 For \(N\) sampled configurations, each atom \(i\) in the sampled region is represented by \(N\) interaction sites at its sampled positions. Their atomic charges and van der Waals well-depth parameters are scaled according to
 
-\[
-q_i^{(k)}=\frac{q_i}{N},
+$$
+q_i^{(k)} = \frac{q_i}{N},
 \qquad
-\epsilon_i^{(k)}=\frac{\epsilon_i}{N^2},
+\epsilon_i^{(k)} = \frac{\epsilon_i}{N^2},
 \qquad
-k=1,\ldots,N.
-\]
+k = 1,\ldots,N.
+$$
 
 Van der Waals size parameters remain unchanged.
 
