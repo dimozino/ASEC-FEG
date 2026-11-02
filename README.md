@@ -22,7 +22,7 @@ The supplied implementation uses **100 sampled configurations**. This is a confi
 
 ### ASEC interaction sites
 
-For \(N\) sampled configurations, each atom \(i\) in the sampled region is represented by \(N\) interaction sites at its sampled positions. Their atomic charges and van der Waals well-depth parameters are scaled according to
+For $N$ sampled configurations, each atom $i$ in the sampled region is represented by $N$ interaction sites at its sampled positions. Their atomic charges and van der Waals well-depth parameters are scaled according to
 
 $$
 q_i^{(k)} = \frac{q_i}{N},
@@ -34,7 +34,7 @@ $$
 
 Van der Waals size parameters remain unchanged.
 
-The \(1/N^2\) factor applies to the **per-site well-depth parameter**. With geometric mixing of well-depth parameters, the interaction between an environmental site and an unscaled chromophore atom is consequently scaled by \(1/N\).
+The $1/N^2$ factor applies to the **per-site well-depth parameter**. With geometric mixing of well-depth parameters, the interaction between an environmental site and an unscaled chromophore atom is consequently scaled by $1/N$.
 
 In the supplied implementation, one sampled position is retained in a representative configuration, and the remaining positions are added as pseudoatoms. Together, these sites form the ASEC representation. Atoms outside the sampled region retain their conventional MM representation.
 
